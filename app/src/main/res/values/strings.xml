@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AboutMeSLD_</string>
+    <string name="name">sldeny</string>
+    <string name="yellow_star">Yellow star</string>
+    <string name="AboutMe">Soy Dennis
+    \nPero la gente me dice Nenesh, aunque tengo un canal que se llama sldeny
+    y asi es como me gusta que me digan.</string>\
+    <string name="what_is_your_nickname">What is your Nickname?</string>
+    <string name="done">Done</string>
+
+</resources>
