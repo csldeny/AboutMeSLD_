@@ -1,37 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ConstraintLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="@dimen/small_padding"
-    android:paddingStart="@dimen/layout_padding"
-    android:paddingEnd="@dimen/layout_padding"
-    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_margin="16dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="myName"
+            type="net.sldeny.aboutmesld_.MyName" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/ConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:padding="@dimen/small_padding"
+        android:paddingStart="@dimen/layout_padding"
+        android:paddingEnd="@dimen/layout_padding"
+        tools:context=".MainActivity">
+
 
         <TextView
             android:id="@+id/name_text"
             style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/name"
+            android:text="@={myName.name}"
             android:textAlignment="center" />
 
         <EditText
@@ -46,7 +40,7 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:padding="@dimen/small_padding"
-            android:textAlignment="center"/>
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/done_button"
@@ -66,10 +60,11 @@
             style="@style/NameStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:paddingBottom="@dimen/small_padding"
             android:textAlignment="center"
             android:visibility="gone"
-            android:background="@color/colorAccent"
-            android:paddingBottom="@dimen/small_padding"/>
+            android:text="@={myName.nickname}"/>
 
         <ImageView
             android:id="@+id/star_image"
@@ -93,5 +88,7 @@
                 android:lineSpacingMultiplier="1.2"
                 android:text="@string/AboutMe" />
         </ScrollView>
+
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
